@@ -640,7 +640,7 @@ module.exports = {
                     return this.waitForResult(res.taskId);
                 })
                 .then(solution => {
-                    resolve(solution.token)
+                    resolve(solution)
                 })
                 .catch(err => reject(err));
         });
@@ -653,8 +653,7 @@ module.exports = {
                             proxyAddress,
                             proxyPort,
                             proxyLogin,
-                            proxyPassword,
-                            userAgent) {
+                            proxyPassword) {
         return new Promise((resolve, reject) => {
             this.JSONRequest('createTask', {
                 'clientKey' : this.settings.clientKey,
@@ -666,8 +665,7 @@ module.exports = {
                     proxyAddress:           proxyAddress,
                     proxyPort:              proxyPort,
                     proxyLogin:             proxyLogin,
-                    proxyPassword:          proxyPassword,
-                    userAgent:              userAgent
+                    proxyPassword:          proxyPassword
                 },
                 'softId' : this.settings.softId
             })
@@ -679,7 +677,7 @@ module.exports = {
                     if (solution.cookies) {
                         this.settings.cookies = solution.cookies;
                     }
-                    resolve(solution.token)
+                    resolve(solution
                 })
                 .catch(err => reject(err));
         });
