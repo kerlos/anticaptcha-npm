@@ -653,7 +653,8 @@ module.exports = {
                             proxyAddress,
                             proxyPort,
                             proxyLogin,
-                            proxyPassword) {
+                            proxyPassword,
+                            userAgent) {
         return new Promise((resolve, reject) => {
             this.JSONRequest('createTask', {
                 'clientKey' : this.settings.clientKey,
@@ -665,7 +666,8 @@ module.exports = {
                     proxyAddress:           proxyAddress,
                     proxyPort:              proxyPort,
                     proxyLogin:             proxyLogin,
-                    proxyPassword:          proxyPassword
+                    proxyPassword:          proxyPassword,
+                    userAgent:              userAgent
                 },
                 'softId' : this.settings.softId
             })
