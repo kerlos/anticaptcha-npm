@@ -677,7 +677,7 @@ module.exports = {
                     if (solution.cookies) {
                         this.settings.cookies = solution.cookies;
                     }
-                    resolve(solution
+                    resolve(solution)
                 })
                 .catch(err => reject(err));
         });
